@@ -1,0 +1,26 @@
+{
+  "name": "data-analytic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "generate_data.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivambegins/Electric-Vehicle-Sales-Market-Growth.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/shivambegins/Electric-Vehicle-Sales-Market-Growth/issues"
+  },
+  "homepage": "https://github.com/shivambegins/Electric-Vehicle-Sales-Market-Growth#readme",
+  "dependencies": {
+    "csv-parser": "^3.2.0",
+    "express": "^5.2.1"
+  }
+}

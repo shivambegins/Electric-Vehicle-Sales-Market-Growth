@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Sales Analytics</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="EV Logo">
+                <h2>EV Analytics</h2>
+            </div>
+            <div class="filters">
+                <h3>Filters & Controls</h3>
+                
+                <div class="filter-group">
+                    <label for="year-range">Year: <span id="year-label">All</span></label>
+                    <select id="year-select">
+                        <option value="All">All Years</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="region-select">Region</label>
+                    <select id="region-select">
+                        <option value="All">All Regions</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="powertrain-select">Powertrain Type</label>
+                    <select id="powertrain-select">
+                        <option value="All">All</option>
+                    </select>
+                </div>
+            </div>
+            <hr class="sidebar-divider">
+            <div class="about">
+                <h4>About this Dashboard</h4>
+                <p>This interactive dashboard provides insights into Electric Vehicle (EV) sales growth, market share distributions, and regional trends over the last decade.</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h1>⚡ Electric Vehicle (EV) Market Analytics</h1>
+                <p>An interactive overview of global EV adoption, regional dominances, and manufacturer performances.</p>
+            </header>
+
+            <!-- Hero Metrics -->
+            <div class="hero-metrics">
+                <div class="metric-card">
+                    <h4>Total EV Sales</h4>
+                    <div class="value" id="metric-total">Loading...</div>
+                </div>
+                <div class="metric-card">
+                    <h4>Avg Yearly Sales</h4>
+                    <div class="value" id="metric-avg">-</div>
+                </div>
+                <div class="metric-card">
+                    <h4>Top Region</h4>
+                    <div class="value" id="metric-region">-</div>
+                </div>
+                <div class="metric-card">
+                    <h4>Top Manufacturer</h4>
+                    <div class="value" id="metric-maker">-</div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Charts Area -->
+            <div class="charts-container">
+                <div class="chart-box full-width glass">
+                    <h3>📈 Global EV Sales Trends Over Time</h3>
+                    <div class="canvas-wrapper"><canvas id="trendChart"></canvas></div>
+                </div>
+
+                <div class="chart-row">
+                    <div class="chart-box half-width glass">
+                        <h3>🏆 Market Share by Manufacturer</h3>
+                        <div class="canvas-wrapper donut-wrapper"><canvas id="donutChart"></canvas></div>
+                    </div>
+                    <div class="chart-box half-width glass">
+                        <h3>🔋 Powertrain Adoption</h3>
+                        <div class="canvas-wrapper"><canvas id="barChart"></canvas></div>
+                    </div>
+                </div>
+
+                <div class="chart-box full-width glass">
+                    <h3>🌍 Regional Growth Trends</h3>
+                    <div class="canvas-wrapper"><canvas id="regionalChart"></canvas></div>
+                </div>
+            </div>
+
+            <footer>
+                <p>Built with Modern Data Engineering • Powered by Node.js</p>
+            </footer>
+        </main>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

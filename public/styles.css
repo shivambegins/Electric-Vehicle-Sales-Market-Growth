@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    overflow-x: hidden;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    background-color: #161b22;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #30363d;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.logo img {
+    width: 40px;
+    filter: drop-shadow(0 0 10px rgba(88, 166, 255, 0.5));
+}
+
+.logo h2 {
+    color: #58a6ff;
+    font-size: 1.4rem;
+}
+
+.filters h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.filter-group {
+    margin-bottom: 1.5rem;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.filter-group select:focus, .filter-group select:hover {
+    border-color: #58a6ff;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+}
+
+.sidebar-divider {
+    border: 0;
+    border-top: 1px solid #30363d;
+    margin: 2rem 0;
+}
+
+.about h4 {
+    margin-bottom: 0.5rem;
+    color: #c9d1d9;
+}
+
+.about p {
+    font-size: 0.85rem;
+    color: #8b949e;
+    line-height: 1.5;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    margin-left: 280px;
+    padding: 2.5rem 3rem;
+}
+
+header h1 {
+    color: #58a6ff;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: #8b949e;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Metric Cards */
+.hero-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.metric-card {
+    background: rgba(22, 27, 34, 0.7);
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: left;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: #58a6ff;
+}
+
+.metric-card h4 {
+    font-size: 0.9rem;
+    color: #8b949e;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.metric-card .value {
+    color: #3fb950;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid #30363d;
+    margin: 2.5rem 0;
+}
+
+/* Charts */
+.charts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.chart-row {
+    display: flex;
+    gap: 2rem;
+}
+
+.chart-box {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.chart-box h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.half-width {
+    flex: 1;
+    min-width: 0; /* Important for Chart.js responsiveness */
+}
+
+.canvas-wrapper {
+    position: relative;
+    height: 350px;
+    width: 100%;
+}
+
+.donut-wrapper {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    margin-top: 3rem;
+    text-align: center;
+    color: #8b949e;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 1024px) {
+    .chart-row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #30363d;
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 1.5rem;
+    }
+}
